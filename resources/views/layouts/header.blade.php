@@ -64,8 +64,13 @@
                             <a class="profile-pic" href="#">
                                 <img src="{{asset('assets/plugins/images/users/varun.jpg')}}" alt="user-img" width="36"
                                     class="img-circle"><span class="text-white font-medium">Steave</span></a>
+                                   
                         </li>
-                        <!-- ============================================================== -->
+                        <li><form method="POST" action="{{ url('logout') }}">
+                            @csrf
+                            <button type="submit">Logout</button>
+                            </form></li>
+                                                    <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
                     </ul>

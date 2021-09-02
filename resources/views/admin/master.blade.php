@@ -23,6 +23,7 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+    
 @include('layouts.header')
 @include('layouts.sidebar')
     

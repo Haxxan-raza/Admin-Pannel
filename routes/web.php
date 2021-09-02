@@ -13,6 +13,7 @@ use App\Http\Controllers\AddController;
 |
 */
 Route::get('/', function () {
+    // dd(google::getClientID());
     return view('welcome');
 })->middleware('auth');
 
@@ -45,6 +46,12 @@ Route::post('updateprofile/{id}',[AddController::class,'updateProfile'])->name('
 // Route::get('deleteprofile/{id}',[AddController::class, 'destroy'])->name('deleteprofile');
 Route::delete('deleterecord/{id}', [AddController::class, 'destroy'])->name('deleterecord');
 
+// Google login
+Route::get('login/google', [App\Http\Controllers\Auth\LoginController::class, 'redirectToGoogle'])->name('login/google');
+Route::get('login/google/callback', [App\Http\Controllers\Auth\LoginController::class, 'handleGoogleCallback']);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('logout', [AddController::class,'logout']);
+

@@ -63,6 +63,15 @@
                                     </a>
                                 @endif
                             </div>
+                            <div class="row mx-gutters-2 mb-4">
+                <div class="col-sm-4">
+                    <a href="{{ route('login/google') }}">
+                        <button type="button" class="btn btn-block btn-google">
+                            <i class="fa fa-google mr-2"></i>Google
+                        </button>
+                    </a>
+                </div>
+            </div>
                         </div>
                     </form>
                 </div>

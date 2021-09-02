@@ -11,6 +11,7 @@ use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
+use App\SocialMedia\Google;
 // use Illuminate\Database\Eloquent\Model;
 use Auth;
 
@@ -18,9 +19,10 @@ class AddController extends Controller
 {
 //show view cityadd
 
-function show()
+function show( Google $goo)
 {
-    
+// $goo->getGoogleCred(config('services.google'));
+//     dd($goo);
     return view('cityadd');
   
 }
@@ -130,6 +132,10 @@ public function updateProfile(Request $request ,$id)
         $deleteprofiles->delete();
         return redirect()->back()->with('status','profileData Deleted Successfully');
 }
+public function logout(Request $request) {
+    Auth::logout();
+    return redirect('/login');
+  }
    
        
 }
